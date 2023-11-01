@@ -25,7 +25,7 @@ const customerSchema = new Schema({
     default: [],
   },
   createdAt: {
-    type: Date.UTC,
+    type: Date,
     default: () => Date.now(),
     immutable: true,
   },
