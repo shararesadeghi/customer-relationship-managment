@@ -1,8 +1,9 @@
+import ItemList from "./ItemList";
 
-const Form = () => {
+const Form = ({form,setForm}) => {
     return (
         <div>
-            Form
+            <ItemList form={form} setForm={setForm}/>
         </div>
     );
 };
