@@ -1,6 +1,30 @@
+import HomePage from "../components/template/HomePage";
+import Customer from './../models/Customer';
+import connectDB from './../utils/connectDB';
 
-export default function Home() {
+function Index({customers}) {
+  console.log(customers);
   return (
-    <h1>CRM</h1>
+    <HomePage/>
   )
+}
+
+export default Index;
+
+export async function getServerSideProps(){
+
+  try{
+    await connectDB();
+    const customers = await Customer.find();
+    return {
+      props:{
+        customers: JSON.parse(JSON.stringify(customers))
+      }
+    }
+
+  }catch(err){
+    return {
+      notFound:true,
+    }
+  }
 }
