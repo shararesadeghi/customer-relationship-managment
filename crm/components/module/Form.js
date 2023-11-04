@@ -39,6 +39,13 @@ const Form = ({ form, setForm }) => {
       />
       <FormInput
         type="text"
+        name="address"
+        label="Address"
+        value={form.address}
+        onChange={changeHandler}
+      />
+      <FormInput
+        type="text"
         name="postalCode"
         label="Postal Code"
         value={form.postalCode}
