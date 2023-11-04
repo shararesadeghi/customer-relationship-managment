@@ -5,7 +5,7 @@ import connectDB from './../utils/connectDB';
 function Index({customers}) {
   console.log(customers);
   return (
-    <HomePage/>
+    <HomePage customers={customers}/>
   )
 }
 
